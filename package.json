@@ -1,6 +1,6 @@
 {
   "name": "@shell/composer",
-  "version": "1.0.0",
+  "version": "0.5.0",
   "description": "OpenWhisk Shell plugins for the OpenWhisk Composer",
   "main": "plugin.js",
   "scripts": {
