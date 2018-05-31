@@ -25,6 +25,6 @@ const app =  composer.retain(composer.sequence('TripleAndIncrement', 'DivideByTw
 console.log(JSON.stringify(app, null, 4))
 
 // invoke action composition
-const wsk = composer.openwhisk({ignore_certs:true})
+const wsk = composer.util.openwhisk({ignore_certs:true})
 function print(obj) { console.log(JSON.stringify(obj.response ? obj.response.result : obj, null, 4)) }
 wsk.actions.invoke({ name: 'conductor', params: { $run: app, n: 3 }, blocking: true }).then(print, console.error)

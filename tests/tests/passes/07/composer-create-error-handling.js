@@ -80,7 +80,7 @@ describe('app create error handling and app create --dry-run', function() {
           dryRunBad = [ { input: `${badDir}/error1.js`, err: `SLACK_TOKEN required in environment.` },
                         { input: `${badDir}/nofsm.js`, err: `Error: Unable to compile your composition` },
                         { input: `${badDir}/t2s.js`, err: `ReferenceError: slackConfig is not defined` },
-                        { input: `${badDir}/if-bad.js`, err: `if-bad.js:2
+                        { input: `${badDir}/if-bad.js`, err: `if-bad.js:4
   /* cond */ 'authenticate',,  /* double comma, expect parse error */
                             ^
 

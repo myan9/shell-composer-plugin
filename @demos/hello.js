@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 IBM Corporation
+ * Copyright 2017-2018 IBM Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,4 +14,6 @@
  * limitations under the License.
  */
 
-composer.sequence(args => ({msg: `hello ${args.name}!`}))
+const { function:Function } = require('@ibm-functions/composer')
+
+module.exports = Function(args => ({msg: `hello ${args.name}!`}))

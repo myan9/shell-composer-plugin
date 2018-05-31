@@ -59,16 +59,13 @@ const src = app => fs.readFileSync(path.join(ROOT, '../app/plugins/modules/compo
 // hardcode for now... we need to generate this every time
 const fsm = {
     hello: {
-        "type": "sequence",
-        "components": [{
-            "type": "function",
-            "function":{
-              "exec": {
+        "type": "function",
+        "function":{
+            "exec": {
                 "kind": "nodejs:default",
                 "code": "args => ({msg: `hello ${args.name}!`})"
               }
-            }            
-        }]
+        }
     },
     if: {
         "type": "if",

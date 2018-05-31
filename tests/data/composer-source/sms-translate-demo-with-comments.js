@@ -1,3 +1,6 @@
+const composer = require('@ibm-functions/composer')
+
+module.exports =
 /** COMMENT */ composer.sequence(
     // COMMENT 
   p => ({payload: p.Body, number: p.From /* goofy */}),

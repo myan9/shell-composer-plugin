@@ -2,7 +2,9 @@
 
 const prefix  = 'travis2slack'
 
-composer.sequence(
+const composer = require('@ibm-functions/composer')
+
+module.exports = composer.sequence(
   `/whisk.system/utils/echo`,
   args => { return JSON.parse(args.payload) },
   `${prefix}/extract`,

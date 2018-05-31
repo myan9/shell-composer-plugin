@@ -12,7 +12,9 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@ibm-functions/composer": "^0.5.2",
-    "chokidar": "^2.0.3"
+    "@ibm-functions/composer": "git://github.com/tardieu/composer.git#dev",
+    "app-module-path": "^2.2.0",
+    "chokidar": "^2.0.3",
+    "require-uncached": "^1.0.3"
   }
 }

@@ -1,5 +1,7 @@
 'use strict'
 
+const composer = require('@ibm-functions/composer')
+
 const slackConfig = {
     token: process.env['SLACK_TOKEN'],
     username: 'whiskbot',
@@ -13,7 +15,7 @@ if (slackConfig.token === undefined) {
 
 const prefix = 'travis2slack'
 
-composer.sequence(
+module.exports = composer.sequence(
     args => { return JSON.parse(args.payload) },
     `/whisk.system/utils/echo`,
     `${prefix}/extract`

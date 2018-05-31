@@ -1,4 +1,6 @@
-composer.sequence(
+const composer = require('@ibm-functions/composer')
+
+module.exports = composer.sequence(
   p => ({payload: p.Body, number: p.From}),
 
   composer.retain(

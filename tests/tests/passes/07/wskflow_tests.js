@@ -75,7 +75,7 @@ describe('app preview should actively watching an external file', function() {
 
     it('should write composer.sequence("a", "b") to a temp file', () => {
       return new Promise((resolve, reject) => {
-        fs.writeFile(tempFileName, `composer.sequence("a", "b")`, (err) => {
+        fs.writeFile(tempFileName, `module.exports = require('@ibm-functions/composer').sequence("a", "b")`, (err) => {
           if(err)
             reject(err);
           else
@@ -93,7 +93,7 @@ describe('app preview should actively watching an external file', function() {
 
     it('should update the temp file to composer.sequence("a", "c")asdfasdf', () => {
       return new Promise((resolve, reject) => {
-        fs.writeFile(tempFileName, `composer.sequence("a", "c")asdfasdf`, (err) => {
+        fs.writeFile(tempFileName, `module.exports = require('@ibm-functions/composer').sequence("a", "c")asdfasdf`, (err) => {
           if(err)
             reject(err);
           else
@@ -107,7 +107,7 @@ describe('app preview should actively watching an external file', function() {
 
     it('should update the temp file to composer.sequence("a", "c")', () => {
       return new Promise((resolve, reject) => {
-        fs.writeFile(tempFileName, `composer.sequence("a", "c")`, (err) => {
+        fs.writeFile(tempFileName, `module.exports = require('@ibm-functions/composer').sequence("a", "c")`, (err) => {
           if(err)
             reject(err);
           else
@@ -130,7 +130,7 @@ describe('app preview should actively watching an external file', function() {
     // update file again, and verify that preview updates too 
     it('should update the temp file to composer.sequence("a", "b")', () => {
       return new Promise((resolve, reject) => {
-        fs.writeFile(tempFileName, `composer.sequence("a", "b")`, (err) => {
+        fs.writeFile(tempFileName, `module.exports = require('@ibm-functions/composer').sequence("a", "b")`, (err) => {
           if(err)
             reject(err);
           else

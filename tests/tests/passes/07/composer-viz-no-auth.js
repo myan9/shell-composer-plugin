@@ -55,7 +55,7 @@ describe('show the composer visualization with no wskauth', function() {
           whileSeq = composerInput('while-seq.js')
 
     /** test: load @demos/hello */
-    it(`show visualization via ${cmd} from FSM file ${hello.path}`, () => cli.do(`${cmd} ${hello.path}`, this.app)
+    it(`show visualization via ${cmd} from file ${hello.path}`, () => cli.do(`${cmd} ${hello.path}`, this.app)
        .then(verifyTheBasicStuff(hello.file, 'composerLib'))
        .then(() => this.app.client.element('body.no-auth')) // make sure we have this indicator
        .catch(common.oops(this)))

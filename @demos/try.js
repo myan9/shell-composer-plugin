@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
-composer.try(
+const { try:Try } = require('@ibm-functions/composer')
+
+module.exports = Try(
   /* try   */ 'validate',
   /* catch */ args => ({ ok: false }))

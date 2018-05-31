@@ -92,7 +92,7 @@ describe('edit compositions', function() {
        .then(cli.expectOK)
        .then(sidecar.expectOpen)
        .then(sidecar.expectShowing('comp3'))
-       .then(() => this.app.client.keys('composer.sequence(notfound1, notfound2)'))
+       .then(() => this.app.client.keys('module.exports = require("@ibm-functions/composer").sequence(notfound1, notfound2)'))
        .then(() => this.app.client.click(ui.selectors.SIDECAR_MODE_BUTTON('Deploy')))
        .then(() => this.app.client.waitForExist('.editor.parse-error-decoration'))
        .catch(common.oops(this)))

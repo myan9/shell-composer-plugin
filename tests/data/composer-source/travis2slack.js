@@ -16,6 +16,8 @@
 
 'use strict'
 
+const composer = require('@ibm-functions/composer')
+
 const prefix = 'travis2slack'
 
 const slackConfig = {
@@ -29,7 +31,7 @@ if (slackConfig.token === undefined) {
     process.exit(-1)
 }
 
-composer.sequence(
+module.exports = composer.sequence(
   `/whisk.system/utils/echo`,
   `${prefix}/extract`,
   `${prefix}/fetch.job.id`,

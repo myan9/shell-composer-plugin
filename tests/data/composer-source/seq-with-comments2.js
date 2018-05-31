@@ -1,2 +1,4 @@
+const composer = require('@ibm-functions/composer')
+
 // test comment
-composer.sequence("seq1", "seq2", "seq3")
+module.exports = composer.sequence("seq1", "seq2", "seq3")

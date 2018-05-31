@@ -1,5 +1,7 @@
 'use strict'
 
+const composer = require('@ibm-functions/composer')
+
 const dbname = 'travis2slack'
 const cloudantBinding = process.env['CLOUDANT_PACKAGE_BINDING'];
 const slackConfig = {
@@ -18,7 +20,7 @@ if (cloudantBinding === undefined) {
   process.exit(-1)
 }
 
-composer.let({ db: dbname, sc: slackConfig, userID: undefined, name: undefined },
+module.exports = composer.let({ db: dbname, sc: slackConfig, userID: undefined, name: undefined },
   composer.sequence(
     `/whisk.system/utils/echo`,
     p => { name = p.text; userID = p.user_id },

@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-composer.if(
+const { if:If } = require('@ibm-functions/composer')
+
+module.exports = If(
   /* cond */ 'authenticate',
   /* then */ 'welcome',
   /* else */ 'login')

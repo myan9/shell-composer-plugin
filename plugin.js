@@ -50,4 +50,7 @@ module.exports = (commandTree, prequire) => {
     require('./lib/sequence')(commandTree, prequire)
     require('./lib/try')(commandTree, prequire)
     require('./lib/while')(commandTree, prequire)
+
+    // language support
+    require('./lib/lang/nodejs')(commandTree, prequire)
 }

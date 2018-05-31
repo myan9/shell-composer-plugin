@@ -16,4 +16,12 @@
 
 const composer = require('@ibm-functions/composer')
 
-module.exports = composer.sequence()
+function foo() {
+    const fs = require('fs');
+    const authorMap = require('./author-map.json');
+    return composer.let({ am: authorMap }, p => {
+        return am[p.author] == undefined ? {} : am[p.author]
+    })
+}
+
+exports.main = composer.sequence(foo())

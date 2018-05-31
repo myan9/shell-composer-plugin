@@ -14,8 +14,14 @@
  * limitations under the License.
  */
 
-composer.try(
-  composer.sequence(
-    composer.retain('validate'),
-    args => ({ text: new Buffer(args.params.str, 'base64').toString() })),
-  args => ({ ok: false }))
+const { sequence:Seq, try:Try, retain:Retain } = require('@ibm-functions/composer')
+
+/**
+ * 
+ *
+ */
+const base64ify = args => ({ text: new Buffer(args.params.str, 'base64').toString() })
+
+module.exports = Try(
+    /* try */   Seq(Retain('validate'), base64ify),
+    /* catch */ args => ({ ok: false }))
